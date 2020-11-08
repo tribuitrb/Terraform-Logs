@@ -1,11 +1,7 @@
 # Tutorial: https://cloud.google.com/community/tutorials/getting-started-on-gcp-with-terraform
 # get key: https://console.cloud.google.com/apis/credentials/serviceaccountkey
 # Region: https://cloud.google.com/compute/docs/regions-zones
-provider "google" {
-  credentials = file("TrB Project-7851ca716693.json")
-  project     = "trb-project-295021"
-  region      = "asia-southeast1-b"
-}
+# Include provider
 
 // Add firewall
 resource "google_compute_firewall" "default" {

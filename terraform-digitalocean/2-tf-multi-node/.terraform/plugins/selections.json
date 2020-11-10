@@ -1,0 +1,6 @@
+{
+  "registry.terraform.io/digitalocean/digitalocean": {
+    "hash": "h1:pn5on0dHedEqnMIAOXMAQXp9ygg7s+/zGg1mVNgCxBU=",
+    "version": "2.1.0"
+  }
+}

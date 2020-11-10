@@ -1,0 +1,71 @@
+{
+  "version": 4,
+  "terraform_version": "0.13.5",
+  "serial": 13,
+  "lineage": "c4b5d4d7-d68f-4337-57b0-3e52deac4750",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "vultr_server",
+      "name": "my_server",
+      "provider": "provider[\"registry.terraform.io/vultr/vultr\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "allowed_bandwidth": "1000",
+            "app_id": 0,
+            "auto_backup": true,
+            "cost_per_month": "5.00",
+            "current_bandwidth": 0,
+            "date_created": "2020-11-10 16:00:29",
+            "ddos_protection": false,
+            "default_password": "p}S4Vh*wb4g?N$[C",
+            "disk": "Virtual 25 GB",
+            "enable_ipv6": true,
+            "enable_private_network": null,
+            "firewall_group_id": "0",
+            "gateway_v4": "45.32.102.1",
+            "hostname": "my-server-hostname",
+            "id": "42041316",
+            "internal_ip": "",
+            "iso_id": 0,
+            "kvm_url": "https://my.vultr.com/subs/vps/novnc/api.php?data=djJ8NVBDdE80M0ZfQnpCcEpaRHJQUnJlNTJIRzFDeDMySjF8i1EnUOT9MRiKJkbbQEe-AyUzRWmQIWtWsjT6gja4QpFWuvA6-reWMc3DSlGPqjGlgw_xYiuKMP9EJw-ZmPyy4ZbmdO3io-1E0dlgKTZD0Uye8YY3HHnvZkDFh2FeKMc7ZkhGE8xalTdzldSeU3DewVhlU7s-1cHJ0Ar1UtY91Lo7aK_N",
+            "label": "my-server-label",
+            "location": "Singapore",
+            "main_ip": "45.32.102.155",
+            "netmask_v4": "255.255.254.0",
+            "network_ids": [],
+            "network_ips": {},
+            "network_macs": {},
+            "notify_activate": false,
+            "os": "Ubuntu 20.10 x64",
+            "os_id": 413,
+            "pending_charges": "0.02",
+            "plan_id": 201,
+            "power_status": "running",
+            "ram": "1024 MB",
+            "region_id": 40,
+            "reserved_ip": null,
+            "script_id": null,
+            "server_state": "locked",
+            "snapshot_id": null,
+            "ssh_key_ids": null,
+            "status": "active",
+            "tag": "my-server-tag",
+            "user_data": "{'foo': true}",
+            "v6_networks": [
+              {
+                "v6_main_ip": "2001:19f0:4401:04e8:5400:03ff:fe0e:bd9d",
+                "v6_network": "2001:19f0:4401:4e8::",
+                "v6_network_size": "64"
+              }
+            ],
+            "vps_cpu_count": "1"
+          }
+        }
+      ]
+    }
+  ]
+}

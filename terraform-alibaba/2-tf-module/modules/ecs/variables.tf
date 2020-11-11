@@ -1,17 +1,15 @@
+#
 variable "index" {
   type        = number
   default     = 1
   description = "index number for ecs instance counter"
 }
 
-// Instance vars
 variable "number_of_instances" {
   description = "number of instance to create"
   type        = number
   default     = 1
 }
-
-// Financial vars
 
 variable "custom_name" {
   type        = string
@@ -23,30 +21,30 @@ variable "custom_host_name" {
   description = "Host name not compliant with foundation standards"
 }
 
-# variable "image_type" {
-#   description = "Regex name of the image, example ubuntu_18.*64"
-#   default     = "^ubuntu_18.*64"
-#   type        = string
-# }
-
 variable "image_id" {
   description = "Regex name of the image, example ubuntu_18.*64"
   default     = "ubuntu_18_04_64_20G_alibase_20190624.vhd"
   type        = string
 }
 
+# variable "image_type" {
+#   description = "Regex name of the image, example ubuntu_18.*64"
+#   default     = "^ubuntu_18.*64"
+#   type        = string
+# }
+
 variable "instance_type" {
   type        = string
   description = "instance type"
 }
 
+// Financial vars
 variable "instance_charge_type" {
-  default     = "PrePaid"
+  default     = "PostPaid"
   type        = string
-  description = "The charge type of instance. Choices are 'PostPaid' and 'PrePaid' or 'PayByBandwidth'"
+  description = "The charge type of instance. Choices are 'PostPaid' and 'PrePaid'"
 }
 
-// Net Vars
 variable "vswitch_id" {
   description = "The virtual switch ID to launch in VPC"
   type        = string
@@ -57,6 +55,17 @@ variable "security_groups" {
   type        = list(string)
 }
 
+variable "internet_charge_type" {
+  description = "The internet charge type of instance. Choices are 'PayByTraffic' and 'PayByBandwidth"
+  default     = "PayByBandwidth"
+  type        = string
+}
+
+variable "internet_max_bandwidth_out" {
+  default = 10
+  type    = number
+}
+
 //disks
 variable "system_disk_category" {
   type        = string
@@ -64,18 +73,29 @@ variable "system_disk_category" {
   description = "system disk category, cloud_efficiency and cloud_ssd"
 }
 
-variable "internet_charge_type" {
-  description = "The internet charge type of instance. Choices are 'PayByTraffic' and 'PayByBandwidth"
-  default     = "PayByTraffic"
-  type        = string
-}
-
-variable "internet_max_bandwidth_out" {
-  description = "The internet charge type of instance. Choices are 'PayByTraffic' and 'PayByBandwidth"
-  default     = 10
+variable "system_disk_size" {
   type        = number
+  default     = 40
+  description = "system disk size"
 }
 
+# variable "data_disks" {
+#   description = "Configuration of the disks to attach to the ECS instance: type and size"
+#   type        = list(map(string))
+#   default = [
+#     {
+#       data_disk_category = "cloud_efficiency"
+#       data_disk_size     = "50"
+#       data_disk_index    = "0"
+#     }
+#   ]
+# }
+# variable "encryption" {
+#   default = true
+#   description = "If it is true, the disk will be encrypted"
+# }
+
+// ssh-keys
 variable "key_name" {
   default     = ""
   type        = string

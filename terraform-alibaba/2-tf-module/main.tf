@@ -69,14 +69,33 @@ module "test-instance" {
   custom_name         = "TEST001"
   custom_host_name    = "TEST001"
 
+  # image_type           = "^centos_7_6_x64"
   image_id             = "ubuntu_18_04_64_20G_alibase_20190624.vhd"
-#   image_type    = "^centos_7_6_x64"
-  instance_charge_type  = "PostPaid"
+  instance_type        = "${data.alicloud_instance_types.c2g4.instance_types.0.id}"
+  instance_charge_type = "PostPaid"
 
-  instance_type              = "${data.alicloud_instance_types.c2g4.instance_types.0.id}"
-  system_disk_category       = "cloud_efficiency"
-  security_groups            = ["${alicloud_security_group.group.id}"]
-  vswitch_id                 = "${alicloud_vswitch.vsw.id}"
-  key_name                   = "${alicloud_key_pair.publickey.key_name}"
+  vswitch_id      = "${alicloud_vswitch.vsw.id}"
+  security_groups = ["${alicloud_security_group.group.id}"]
+
   internet_max_bandwidth_out = 10
+
+  system_disk_category = "cloud_efficiency"
+  # encryption = false
+  # data_disks = [
+  #   {
+  #     data_disk_category = "cloud_efficiency"
+  #     data_disk_size     = 20
+  #     data_disk_index    = 0
+  #   }
+  # ]
+
+  key_name = "${alicloud_key_pair.publickey.key_name}"
+}
+
+output "ec2_name_instane" {
+  value = module.test-instance.this_instance_name
+}
+
+output "ec2_ip_instane" {
+  value = module.test-instance.this_public_ip
 }

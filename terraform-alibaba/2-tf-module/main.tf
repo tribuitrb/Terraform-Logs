@@ -63,7 +63,8 @@ resource "alicloud_key_pair" "publickey" {
 }
 
 module "test-instance" {
-  source = "./modules/ecs"
+  # source = "git@github.com:tribuitrb/trb-module-tf-aliyun-ecs.git?ref=master"
+  source = "./modules/ecs/"
 
   number_of_instances = 1
   custom_name         = "TEST001"
@@ -72,7 +73,7 @@ module "test-instance" {
   # image_type           = "^centos_7_6_x64"
   image_id             = "ubuntu_18_04_64_20G_alibase_20190624.vhd"
   instance_type        = "${data.alicloud_instance_types.c2g4.instance_types.0.id}"
-  instance_charge_type = "PostPaid"
+  # instance_charge_type = "PostPaid"
 
   vswitch_id      = "${alicloud_vswitch.vsw.id}"
   security_groups = ["${alicloud_security_group.group.id}"]

@@ -25,10 +25,10 @@ output "this_instance_type" {
   value       = alicloud_instance.this.*.instance_type
 }
 
-output "this_instance_charge_type" {
-  description = "The charge type of the instance."
-  value       = alicloud_instance.this.*.instance_charge_type
-}
+# output "this_instance_charge_type" {
+#   description = "The charge type of the instance."
+#   value       = alicloud_instance.this.*.instance_charge_type
+# }
 
 # VSwitch  ID
 output "this_vswitch_id" {

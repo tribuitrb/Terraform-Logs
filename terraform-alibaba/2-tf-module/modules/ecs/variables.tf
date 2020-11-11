@@ -39,11 +39,11 @@ variable "instance_type" {
 }
 
 // Financial vars
-variable "instance_charge_type" {
-  default     = "PostPaid"
-  type        = string
-  description = "The charge type of instance. Choices are 'PostPaid' and 'PrePaid'"
-}
+# variable "instance_charge_type" {
+#   default     = "PostPaid"
+#   type        = string
+#   description = "The charge type of instance. Choices are 'PostPaid' and 'PrePaid'"
+# }
 
 variable "vswitch_id" {
   description = "The virtual switch ID to launch in VPC"
@@ -73,11 +73,11 @@ variable "system_disk_category" {
   description = "system disk category, cloud_efficiency and cloud_ssd"
 }
 
-variable "system_disk_size" {
-  type        = number
-  default     = 40
-  description = "system disk size"
-}
+# variable "system_disk_size" {
+#   type        = number
+#   default     = 40
+#   description = "system disk size"
+# }
 
 # variable "data_disks" {
 #   description = "Configuration of the disks to attach to the ECS instance: type and size"

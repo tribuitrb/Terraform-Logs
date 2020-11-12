@@ -71,8 +71,8 @@ module "test-instance" {
   custom_host_name    = "TEST001"
 
   # image_type           = "^centos_7_6_x64"
-  image_id             = "ubuntu_18_04_64_20G_alibase_20190624.vhd"
-  instance_type        = "${data.alicloud_instance_types.c2g4.instance_types.0.id}"
+  image_id      = "ubuntu_18_04_64_20G_alibase_20190624.vhd"
+  instance_type = "${data.alicloud_instance_types.c2g4.instance_types.0.id}"
   # instance_charge_type = "PostPaid"
 
   vswitch_id      = "${alicloud_vswitch.vsw.id}"
